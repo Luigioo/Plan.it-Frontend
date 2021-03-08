@@ -114,14 +114,15 @@ export default {
           if(this.readyState == 4 && this.status == 200){
               console.log("200dsf");
               var cal = _this.selectInfo.view.calendar;
-              var insertedPlan = JSON.parse(this.responseText);
-              cal.addEvent({
-                id: insertedPlan.id,
-                title: _this.name,
-                allDay: insertedPlan.allday,
-                start: startStr,
-                end: endStr,
-              })
+              // var insertedPlan = JSON.parse(this.responseText);
+              cal.refetchEvents();
+              // cal.addEvent({
+              //   id: insertedPlan.id,
+              //   title: _this.name,
+              //   allDay: insertedPlan.allday,
+              //   start: startStr,
+              //   end: endStr,
+              // })
               _this.$nextTick(() => {
                   _this.$bvModal.hide('add');
               });

@@ -1,5 +1,5 @@
 var plans=[];
-var events=[];
+export var events=[];
 
 export function loadEvents(info, successCallback, failureCallback){
     plans=[];

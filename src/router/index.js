@@ -27,6 +27,11 @@ const routes = [
     name: 'Login',
     component: () => import('../views/Login.vue')
   },
+  {
+    path: '/signup',
+    name: 'Signup',
+    component: ()=> import("../views/Signup.vue")
+  }
 ]
 
 const router = new VueRouter({
@@ -34,7 +39,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to,from,next)=>{
-  if(to.name!=="Login" && !isLoggedIn()){
+  if(to.name!=="Login"&&to.name!=="Signup" && !isLoggedIn()){
     next({name:"Login"});
   }else{
     next();
