@@ -1,4 +1,4 @@
-# reboot
+# PlanIt frontend
 
 ## Project setup
 ```
